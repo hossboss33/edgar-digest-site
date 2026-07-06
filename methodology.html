@@ -5,12 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Filings Digest — Methodology</title>
 <meta name="description" content="How the digest drafts and mechanically verifies each note.">
+<link rel="icon" href="data:image/svg+xml,<svg viewBox='0 0 40 40' width='34' height='34' aria-hidden='true'><rect x='2' y='2' width='36' height='36' rx='7' fill='%238A2D22'/><path d='M12 11h12l4 4v14H12z' fill='none' stroke='%23FAF9F6' stroke-width='2.2' stroke-linejoin='round'/><path d='M24 11v4h4' fill='none' stroke='%23FAF9F6' stroke-width='2.2' stroke-linejoin='round'/><path d='M15.5 20h9M15.5 24h9' stroke='%23FAF9F6' stroke-width='2.2' stroke-linecap='round'/><path d='M15 27.5l2.2 2.2 4-4.5' fill='none' stroke='%23FAF9F6' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="alternate" type="application/rss+xml" title="The Filings Digest" href="feed.xml">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header class="masthead">
-  <a class="brand" href="index.html">The Filings Digest</a>
-  <nav class="nav"><a href="index.html">Issues</a><a href="companies.html">Companies</a><a href="filings.html">Filing types</a><a href="methodology.html">Methodology</a><a href="about.html">About</a></nav>
+  <a class="brand" href="index.html"><svg class="logo" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="7" fill="#8A2D22"/>
+<path d="M12 11h12l4 4v14H12z" fill="none" stroke="#FAF9F6" stroke-width="2.2" stroke-linejoin="round"/>
+<path d="M24 11v4h4" fill="none" stroke="#FAF9F6" stroke-width="2.2" stroke-linejoin="round"/>
+<path d="M15.5 20h9M15.5 24h9" stroke="#FAF9F6" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M15 27.5l2.2 2.2 4-4.5" fill="none" stroke="#FAF9F6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><span>The Filings Digest</span></a>
+  <nav class="nav"><a href="index.html">Front page</a><a href="companies.html">Companies</a><a href="filings.html">Filing types</a><a href="methodology.html">Methodology</a><a href="about.html">About</a></nav>
 </header>
 <main>
 
@@ -20,7 +28,7 @@
   <p class="issue-sub">Four steps, two of them mechanical. The verification
   step is ordinary string comparison, so you can reason about exactly what it
   does and does not catch.</p></header>
-  <div class="steps"><div class="step"><span class="step-n">1</span><div><h3>Watch</h3><p>A script polls SEC EDGAR each weekday for new filings from the watchlist, using the SEC&#x27;s public submissions API. It costs nothing and touches no private data.</p></div></div><div class="step"><span class="step-n">2</span><div><h3>Draft</h3><p>Claude, an AI model, drafts a short note for each new filing under one hard rule: every factual bullet must carry an exact quote from the filing text.</p></div></div><div class="step"><span class="step-n">3</span><div><h3>Verify</h3><p>A separate program, not an AI, checks each quote against the filing character for character, and checks that every number in a bullet appears inside its own supporting quote.</p></div></div><div class="step"><span class="step-n">4</span><div><h3>Publish</h3><p>Notes that pass every check publish here. Notes that fail any check go to a private review file and never publish.</p></div></div></div>
+  <div class="steps"><div class="step"><span class="step-n">1</span><div><h3>Watch</h3><p>A script polls SEC EDGAR each weekday for new filings from the watchlist, using the SEC&#x27;s public submissions API. When a day brings more filings than one issue can cover, the pipeline keeps the highest-priority ones (annual and quarterly reports first, insider forms last) and the issue discloses how many went uncovered.</p></div></div><div class="step"><span class="step-n">2</span><div><h3>Draft</h3><p>Claude, an AI model, drafts a short note for each selected filing under one hard rule: every factual bullet must carry an exact quote from the filing text.</p></div></div><div class="step"><span class="step-n">3</span><div><h3>Verify</h3><p>A separate program, not an AI, checks each quote against the filing character for character, and checks that every number in a bullet appears inside its own supporting quote.</p></div></div><div class="step"><span class="step-n">4</span><div><h3>Publish</h3><p>Notes that pass every check publish here. Notes that fail any check go to a private review file and never publish.</p></div></div></div>
   <h2>What verification catches</h2>
   <p>Fabricated quotes. Altered quotes. Numbers that appear in a claim without
   appearing in the quote that supports it. These are the common failure modes
@@ -28,9 +36,10 @@
   <h2>What verification cannot catch</h2>
   <p>A quote can be accurate and still mislead out of context. A note can
   omit the most important fact in a filing. Long filings are truncated before
-  drafting, so a note may reflect only the first part of a document. This is
-  why every note links to its filing, and why you should read the source
-  before acting on anything here.</p>
+  drafting, so a note may reflect only the first part of a document. On heavy
+  filing days the per-run cap means some filings go uncovered, and each issue
+  says how many. This is why every note links to its filing, and why you
+  should read the source before acting on anything here.</p>
   <h2>Corrections</h2>
   <p>The pipeline republishes from source data on every run. If you find an
   error, check the linked filing first, then report it through the repository
@@ -52,11 +61,13 @@
   accuracy or completeness.</p>
 </div>
 
-  <nav class="footnav"><a href="index.html">Issues</a><a href="companies.html">Companies</a><a href="filings.html">Filing types</a><a href="methodology.html">Methodology</a><a href="about.html">About</a></nav>
+  <nav class="footnav"><a href="index.html">Front page</a><a href="companies.html">Companies</a><a href="filings.html">Filing types</a><a href="methodology.html">Methodology</a><a href="about.html">About</a><a href="feed.xml">RSS</a></nav>
   <p class="colophon">A program compares every quote against the underlying
   SEC filing, character for character, before publication. Flagged material
-  never appears here. SEC filing text is public-domain material from sec.gov.
-  This site is not affiliated with the U.S. Securities and Exchange Commission.</p>
+  never appears here. Your watchlist stars are stored in your browser only.
+  SEC filing text is public-domain material from sec.gov. This site is not
+  affiliated with the U.S. Securities and Exchange Commission.</p>
 </footer>
+<script src="site.js"></script>
 </body>
 </html>

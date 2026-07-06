@@ -5,24 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Filings Digest — About</title>
 <meta name="description" content="What The Filings Digest is, how access works, and the full disclaimers.">
+<link rel="icon" href="data:image/svg+xml,<svg viewBox='0 0 40 40' width='34' height='34' aria-hidden='true'><rect x='2' y='2' width='36' height='36' rx='7' fill='%238A2D22'/><path d='M12 11h12l4 4v14H12z' fill='none' stroke='%23FAF9F6' stroke-width='2.2' stroke-linejoin='round'/><path d='M24 11v4h4' fill='none' stroke='%23FAF9F6' stroke-width='2.2' stroke-linejoin='round'/><path d='M15.5 20h9M15.5 24h9' stroke='%23FAF9F6' stroke-width='2.2' stroke-linecap='round'/><path d='M15 27.5l2.2 2.2 4-4.5' fill='none' stroke='%23FAF9F6' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="alternate" type="application/rss+xml" title="The Filings Digest" href="feed.xml">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header class="masthead">
-  <a class="brand" href="index.html">The Filings Digest</a>
-  <nav class="nav"><a href="index.html">Issues</a><a href="companies.html">Companies</a><a href="filings.html">Filing types</a><a href="methodology.html">Methodology</a><a href="about.html">About</a></nav>
+  <a class="brand" href="index.html"><svg class="logo" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="7" fill="#8A2D22"/>
+<path d="M12 11h12l4 4v14H12z" fill="none" stroke="#FAF9F6" stroke-width="2.2" stroke-linejoin="round"/>
+<path d="M24 11v4h4" fill="none" stroke="#FAF9F6" stroke-width="2.2" stroke-linejoin="round"/>
+<path d="M15.5 20h9M15.5 24h9" stroke="#FAF9F6" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M15 27.5l2.2 2.2 4-4.5" fill="none" stroke="#FAF9F6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><span>The Filings Digest</span></a>
+  <nav class="nav"><a href="index.html">Front page</a><a href="companies.html">Companies</a><a href="filings.html">Filing types</a><a href="methodology.html">Methodology</a><a href="about.html">About</a></nav>
 </header>
 <main>
 
 <article class="issue prose">
   <header class="issue-head"><p class="kicker">About</p><h1>What this is</h1></header>
   <p>The Filings Digest publishes short, source-linked notes on new SEC filings
-  from a fixed watchlist of shipping, steel and mining companies. An AI model
-  drafts each note. A mechanical checker verifies every quote before
-  publication. The <a href="methodology.html">methodology page</a> explains
-  both steps.</p>
+  from a watchlist of the 500 largest U.S. filers plus a seeded shipping and
+  steel roster. An AI model drafts each note. A mechanical checker verifies
+  every quote before publication. The <a href="methodology.html">methodology
+  page</a> explains both steps.</p>
   <h2>Access</h2>
   <p>Paid access is launching soon. Until then, new issues appear as free previews with headlines only, and open in full after 7 days.</p>
+  <p>You can follow specific companies two ways: star them on the
+  <a href="companies.html">companies page</a> (your browser keeps the list,
+  and nothing is sent anywhere), or subscribe to the
+  <a href="feed.xml">RSS feed</a> for every new issue.</p>
   <h2>Disclaimers</h2>
   <p>This site publishes <strong>general information and commentary only</strong>.
   It is not investment advice, not a recommendation or solicitation to buy or
@@ -31,12 +43,13 @@
   broker-dealer, or fiduciary, and has no client relationship with any reader.</p>
   <p>Automated systems generate the content from public SEC filings. The
   verification step checks quotes and numbers. It cannot judge context, and
-  a verbatim quote can still mislead. Read the primary source before relying
-  on anything here; every note links to the official filing on sec.gov. The
-  publisher makes no representation or warranty, express or implied, as to
-  accuracy, completeness, or timeliness, and accepts no liability for losses
-  arising from use of this material. Securities involve risk, including loss
-  of principal.</p>
+  a verbatim quote can still mislead. Coverage is partial: on heavy days the
+  pipeline covers a capped number of filings and discloses the rest. Read the
+  primary source before relying on anything here; every note links to the
+  official filing on sec.gov. The publisher makes no representation or
+  warranty, express or implied, as to accuracy, completeness, or timeliness,
+  and accepts no liability for losses arising from use of this material.
+  Securities involve risk, including loss of principal.</p>
   <p>The publisher may hold positions in securities mentioned. SEC filing
   content is public-domain material from sec.gov. This site is not affiliated
   with or endorsed by the U.S. Securities and Exchange Commission.</p>
@@ -57,11 +70,13 @@
   accuracy or completeness.</p>
 </div>
 
-  <nav class="footnav"><a href="index.html">Issues</a><a href="companies.html">Companies</a><a href="filings.html">Filing types</a><a href="methodology.html">Methodology</a><a href="about.html">About</a></nav>
+  <nav class="footnav"><a href="index.html">Front page</a><a href="companies.html">Companies</a><a href="filings.html">Filing types</a><a href="methodology.html">Methodology</a><a href="about.html">About</a><a href="feed.xml">RSS</a></nav>
   <p class="colophon">A program compares every quote against the underlying
   SEC filing, character for character, before publication. Flagged material
-  never appears here. SEC filing text is public-domain material from sec.gov.
-  This site is not affiliated with the U.S. Securities and Exchange Commission.</p>
+  never appears here. Your watchlist stars are stored in your browser only.
+  SEC filing text is public-domain material from sec.gov. This site is not
+  affiliated with the U.S. Securities and Exchange Commission.</p>
 </footer>
+<script src="site.js"></script>
 </body>
 </html>

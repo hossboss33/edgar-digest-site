@@ -548,12 +548,78 @@ a.tick:hover{color:var(--accent)}
 @media (hover:hover) and (pointer:fine){
   .brand:hover .lg-ring{transform:rotate(22deg)}
 }
+/* ---- v7: fill the page, painted ship, reading room, more motion ---- */
+.issue{max-width:720px}
+.issue-wide{padding:44px 0 64px}
+.issue-wide .issue-head{margin-bottom:26px}
+.issue-wide h1{font-size:34px;letter-spacing:-0.01em;margin-bottom:8px}
+.stats{display:grid;grid-template-columns:repeat(5,1fr)}
+.archive{display:grid;grid-template-columns:repeat(2,1fr);gap:0 16px;
+  align-items:start}
+.archive .section-head{grid-column:1/-1}
+.corows{display:grid;grid-template-columns:1fr 1fr;column-gap:32px}
+.hero-title span{opacity:0;transform:translateY(0.35em);
+  animation:rise 700ms var(--ease-out) forwards}
+.hero-title span:nth-child(2){animation-delay:130ms}
+@keyframes rise{to{opacity:1;transform:translateY(0)}}
+.hero-sub,.hero-ctas{opacity:0;animation:rise 700ms var(--ease-out) 260ms forwards}
+.sea{height:252px}
+.sail{animation:sailx 13s ease-in-out infinite alternate}
+@keyframes sailx{from{transform:translateX(-12px)}to{transform:translateX(16px)}}
+.vessel{animation:rock 5.6s ease-in-out infinite alternate;
+  transform-origin:320px 238px}
+.puff{opacity:0;animation:puffup 4.2s ease-out infinite}
+.puff.p2{animation-delay:1.4s}
+.puff.p3{animation-delay:2.8s}
+@keyframes puffup{
+  0%{opacity:0;transform:translate(0,10px) scale(0.5)}
+  25%{opacity:0.5}
+  100%{opacity:0;transform:translate(14px,-30px) scale(1.6)}
+}
+.clouds{animation:drift 16s ease-in-out infinite alternate}
+.lg-boat{transition:transform 300ms var(--ease-out)}
+@media (hover:hover) and (pointer:fine){
+  .brand:hover .lg-boat{transform:translateY(-2.5px) rotate(-4deg)}
+}
+.module-top{display:flex;justify-content:space-between;align-items:flex-start;
+  margin-bottom:12px}
+.module-ic{color:var(--accent);transition:transform 220ms var(--ease-out)}
+@media (hover:hover) and (pointer:fine){
+  .module:hover .module-ic{transform:rotate(-8deg) scale(1.12)}
+}
+.module-no{margin-bottom:0}
+.rr-front{padding:26px 0 8px}
+.rr{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.rrcard{display:block;border:1px solid var(--rule);border-radius:12px;
+  background:var(--card);padding:14px 16px 16px;text-decoration:none;
+  box-shadow:var(--e1);
+  transition:transform 200ms var(--ease-out),border-color 200ms var(--ease-out),
+    box-shadow 200ms var(--ease-out)}
+@media (hover:hover) and (pointer:fine){
+  .rrcard:hover{transform:translateY(-2px);border-color:var(--faint);box-shadow:var(--e3)}
+}
+.rrcard:active{transform:scale(0.985)}
+.rrcard .nbanner{margin:0 0 12px;box-shadow:none}
+.rrcard h3{font-size:16.5px;line-height:1.35;margin-bottom:6px}
+.rrcard p{font-size:13.5px;color:var(--muted);margin-bottom:10px}
+.rr-front .more-rest{margin-top:14px}
+@media (max-width:860px){ .rr{grid-template-columns:1fr} }
+@media (max-width:720px){
+  .archive{grid-template-columns:1fr}
+  .corows{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat{border-right:none;border-bottom:1px solid var(--rule)}
+  .stat:nth-child(odd){border-right:1px solid var(--rule)}
+  .stat:nth-last-child(-n+1){border-bottom:none}
+  .sea{height:190px}
+}
 @media (prefers-reduced-motion:reduce){
   .card,.module{transition:border-color 200ms ease}
   .btn{transition:opacity 160ms ease}
   .btn:active,.card:active,.star:active,.tool:active,.backtop:active,
-  .entry-emblem:active,.corow-link:active,.module:active{transform:none}
-  .vessel,.sea-front,.gulls,.w-back,.w-mid,.w-front,.refl{animation:none}
-  .ship .faces{animation:none;opacity:1}
+  .entry-emblem:active,.corow-link:active,.module:active,.rrcard:active{transform:none}
+  .vessel,.gulls,.w-back,.w-mid,.w-front,.refl,.sail,.puff,.clouds{animation:none}
+  .puff{opacity:0.2}
+  .hero-title span,.hero-sub,.hero-ctas{animation:none;opacity:1;transform:none}
   .backtop{transition:opacity 240ms ease;transform:none}
 }

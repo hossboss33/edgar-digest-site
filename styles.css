@@ -487,11 +487,73 @@ a.tick:hover{color:var(--accent)}
 .tape a{transition:color 160ms ease}
 .sea[data-parallax] .ship{will-change:transform}
 
+/* ---- v6: depth, 3D, articles, imagery ---- */
+:root{
+  --e1:0 1px 2px rgba(23,21,15,0.05),0 3px 10px rgba(23,21,15,0.05);
+  --e2:0 4px 10px rgba(23,21,15,0.07),0 14px 34px rgba(23,21,15,0.09);
+  --e3:0 8px 18px rgba(23,21,15,0.10),0 28px 60px rgba(23,21,15,0.14);
+}
+[data-theme=dark]{
+  --e1:0 1px 2px rgba(0,0,0,0.35),0 3px 10px rgba(0,0,0,0.3);
+  --e2:0 4px 10px rgba(0,0,0,0.4),0 14px 34px rgba(0,0,0,0.45);
+  --e3:0 8px 18px rgba(0,0,0,0.5),0 28px 60px rgba(0,0,0,0.55);
+}
+.card,.module,.toc,.subpanel,.palette-panel{box-shadow:var(--e1)}
+@media (hover:hover) and (pointer:fine){
+  .card:hover,.module:hover{box-shadow:var(--e3)}
+}
+.card,.module{transform-style:preserve-3d;will-change:transform}
+.tile{filter:drop-shadow(0 2px 4px rgba(0,0,0,0.18))}
+.ship .faces{opacity:0;animation:facein 900ms ease 1.5s forwards}
+@keyframes facein{to{opacity:1}}
+.wave .d{stroke-width:2.2}
+.w-back{opacity:0.35;animation:lapb 6.5s ease-in-out infinite alternate}
+.w-mid{opacity:0.75;animation:lap 4.2s ease-in-out infinite alternate}
+.w-front{animation:lapf 3.1s ease-in-out infinite alternate}
+@keyframes lapb{from{transform:translateX(0)}to{transform:translateX(-22px)}}
+@keyframes lapf{from{transform:translateX(0)}to{transform:translateX(38px)}}
+.refl{animation:lap 5s ease-in-out infinite alternate}
+.sea{height:236px}
+.nbanner{width:100%;height:auto;display:block;border-radius:10px;
+  margin:2px 0 10px;background:var(--card);box-shadow:var(--e1)}
+.byline{font-family:ui-sans-serif,system-ui,sans-serif;font-size:11.5px;
+  text-transform:uppercase;letter-spacing:0.07em;color:var(--faint);
+  margin-bottom:12px}
+.brief{border:1px solid var(--rule);border-radius:14px;background:var(--card);
+  box-shadow:var(--e1);padding:24px 26px 18px;margin:6px 0 18px}
+.brief-head{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;
+  border-bottom:1px solid var(--rule);padding-bottom:10px;margin-bottom:16px}
+.brief-label{font-family:ui-sans-serif,system-ui,sans-serif;font-size:11px;
+  font-weight:700;text-transform:uppercase;letter-spacing:0.12em;
+  color:var(--accent)}
+.brief-note{font-family:ui-sans-serif,system-ui,sans-serif;font-size:11.5px;
+  color:var(--faint)}
+.brief p{margin-bottom:13px;max-width:40em;font-size:16.5px}
+.brief .brief-lede{font-size:18.5px}
+.brief .brief-lede::first-letter{
+  font-size:3.1em;font-weight:700;float:left;line-height:0.85;
+  padding:4px 8px 0 0;color:var(--accent)}
+.lead-brief{border-top:1px solid var(--rule);padding-top:12px;margin:4px 0 12px}
+.lead-brief .brief-label{display:block;margin-bottom:6px}
+.lead-brief p{font-size:15px;color:var(--muted);margin-bottom:8px;max-width:34em}
+.statement{text-align:center;padding:56px 0 34px}
+.st-art{width:120px;color:var(--accent);margin-bottom:14px}
+.st-line{font-size:clamp(30px,4.6vw,44px);font-weight:700;
+  letter-spacing:-0.02em;line-height:1.1}
+.st-line em{color:var(--accent)}
+.st-sub{margin-top:10px;color:var(--faint);font-size:15px}
+.wavediv{color:var(--rule);margin:26px 0 6px}
+.wavediv svg{width:100%;height:18px;display:block}
+.logo .lg-ring{transform-origin:22px 22px;transition:transform 600ms var(--ease-out)}
+@media (hover:hover) and (pointer:fine){
+  .brand:hover .lg-ring{transform:rotate(22deg)}
+}
 @media (prefers-reduced-motion:reduce){
   .card,.module{transition:border-color 200ms ease}
   .btn{transition:opacity 160ms ease}
   .btn:active,.card:active,.star:active,.tool:active,.backtop:active,
   .entry-emblem:active,.corow-link:active,.module:active{transform:none}
-  .vessel,.sea-front,.gulls{animation:none}
+  .vessel,.sea-front,.gulls,.w-back,.w-mid,.w-front,.refl{animation:none}
+  .ship .faces{animation:none;opacity:1}
   .backtop{transition:opacity 240ms ease;transform:none}
 }

@@ -279,6 +279,28 @@
     window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
   });
 
+  /* ---- 3D tilt on cards and modules (decorative; fine pointers only) ---- */
+  if (!reduce && matchMedia("(hover:hover) and (pointer:fine)").matches) {
+    var tiltEls = document.querySelectorAll(".card, .module");
+    tiltEls.forEach(function (el) {
+      var raf = null;
+      el.addEventListener("pointermove", function (ev) {
+        if (raf) return;
+        raf = requestAnimationFrame(function () {
+          var r = el.getBoundingClientRect();
+          var px = (ev.clientX - r.left) / r.width - 0.5;
+          var py = (ev.clientY - r.top) / r.height - 0.5;
+          el.style.transform = "perspective(700px) rotateX(" + (-py * 3.4).toFixed(2)
+            + "deg) rotateY(" + (px * 3.4).toFixed(2) + "deg) translateY(-2px)";
+          raf = null;
+        });
+      });
+      el.addEventListener("pointerleave", function () {
+        el.style.transform = "";
+      });
+    });
+  }
+
   /* ---- share ---- */
   var shareBtn = document.getElementById("share-issue");
   if (shareBtn) {

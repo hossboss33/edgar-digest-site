@@ -5,23 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Filings Digest — Filing types</title>
 <meta name="description" content="Plain-language reference for SEC form types: 10-K, 10-Q, 8-K, 20-F, 6-K, Form 4.">
-<link rel="icon" href="data:image/svg+xml,<svg viewBox='0 0 40 40' width='34' height='34' aria-hidden='true'><rect x='2' y='2' width='36' height='36' rx='7' fill='%238A2D22'/><path d='M12 11h12l4 4v14H12z' fill='none' stroke='%23FAF9F6' stroke-width='2.2' stroke-linejoin='round'/><path d='M24 11v4h4' fill='none' stroke='%23FAF9F6' stroke-width='2.2' stroke-linejoin='round'/><path d='M15.5 20h9M15.5 24h9' stroke='%23FAF9F6' stroke-width='2.2' stroke-linecap='round'/><path d='M15 27.5l2.2 2.2 4-4.5' fill='none' stroke='%23FAF9F6' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg viewBox='0 0 40 40' width='30' height='30' aria-hidden='true' fill='none'><path class='lg-sheet' d='M9 4.5h15l7 7v24H9z' stroke='%2317150F' stroke-width='2.4' stroke-linejoin='round'/><path class='lg-fold' d='M24 4.5v7h7z' fill='%238A2D22' stroke='%238A2D22' stroke-width='2.4' stroke-linejoin='round'/><path class='lg-check' d='M14.5 22.5l4 4 7-8' stroke='%2317150F' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 <link rel="alternate" type="application/rss+xml" title="The Filings Digest" href="feed.xml">
+<script>(function(){try{var t=localStorage.getItem('fd_theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;}catch(e){}})();</script>
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="" data-root="">
+<div class="progress" aria-hidden="true"><div class="progress-bar"></div></div>
 <header class="masthead">
-  <a class="brand" href="index.html"><svg class="logo" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true">
-<rect x="2" y="2" width="36" height="36" rx="7" fill="#8A2D22"/>
-<path d="M12 11h12l4 4v14H12z" fill="none" stroke="#FAF9F6" stroke-width="2.2" stroke-linejoin="round"/>
-<path d="M24 11v4h4" fill="none" stroke="#FAF9F6" stroke-width="2.2" stroke-linejoin="round"/>
-<path d="M15.5 20h9M15.5 24h9" stroke="#FAF9F6" stroke-width="2.2" stroke-linecap="round"/>
-<path d="M15 27.5l2.2 2.2 4-4.5" fill="none" stroke="#FAF9F6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <a class="brand" href="index.html"><svg class="logo" viewBox="0 0 40 40" width="30" height="30" aria-hidden="true" fill="none">
+<path class="lg-sheet" d="M9 4.5h15l7 7v24H9z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+<path class="lg-fold" d="M24 4.5v7h7z" fill="#8A2D22" stroke="#8A2D22" stroke-width="2.4" stroke-linejoin="round"/>
+<path class="lg-check" d="M14.5 22.5l4 4 7-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
 </svg><span>The Filings Digest</span></a>
   <nav class="nav"><a href="index.html">Front page</a><a href="companies.html">Companies</a><a href="filings.html">Filing types</a><a href="methodology.html">Methodology</a><a href="about.html">About</a></nav>
+  <div class="mast-tools">
+    <button class="tool" id="palette-open" title="Search companies (Cmd/Ctrl-K)">
+      <svg viewBox="0 0 20 20" width="15" height="15" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="2"/><path d="M13 13l4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <kbd>&#8984;K</kbd></button>
+    <button class="tool" id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+      <svg class="ic-sun" viewBox="0 0 20 20" width="15" height="15" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/><path d="M10 1v2.4M10 16.6V19M1 10h2.4M16.6 10H19M3.6 3.6l1.7 1.7M14.7 14.7l1.7 1.7M16.4 3.6l-1.7 1.7M5.3 14.7l-1.7 1.7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg class="ic-moon" viewBox="0 0 20 20" width="15" height="15" fill="none" aria-hidden="true"><path d="M17 12.5A7.5 7.5 0 0 1 7.5 3 7.5 7.5 0 1 0 17 12.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
 </header>
 <main>
-<article class="issue prose"><header class="issue-head"><p class="kicker">Reference</p><h1>Filing types, in plain terms</h1><p class="issue-sub">The forms this digest watches, and what each one means. Definitions follow SEC usage; read the <a href="https://www.sec.gov/submit-filings/forms-index" rel="noopener">SEC forms index</a> for the full detail.</p></header><div class="gloss" id="f-10-K"><div class="gloss-head"><span class="chip">10-K</span><h3>Annual report</h3></div><p>The annual report for U.S. filers. Audited financial statements, a description of the business, and risk factors.</p></div><div class="gloss" id="f-10-Q"><div class="gloss-head"><span class="chip">10-Q</span><h3>Quarterly report</h3></div><p>The quarterly report for U.S. filers. Unaudited financial statements for the quarter.</p></div><div class="gloss" id="f-8-K"><div class="gloss-head"><span class="chip">8-K</span><h3>Current report</h3> <span class="freebadge">covered</span></div><p>Discloses material events between periodic reports. Companies must file within four business days of the event.</p></div><div class="gloss" id="f-20-F"><div class="gloss-head"><span class="chip">20-F</span><h3>Annual report, foreign issuer</h3></div><p>The annual report for foreign private issuers listed on U.S. exchanges. Many shipping companies file this instead of a 10-K.</p></div><div class="gloss" id="f-40-F"><div class="gloss-head"><span class="chip">40-F</span><h3>Annual report, Canadian issuer</h3></div><p>The annual report for certain Canadian issuers under the U.S.–Canada multijurisdictional system.</p></div><div class="gloss" id="f-6-K"><div class="gloss-head"><span class="chip">6-K</span><h3>Interim report, foreign issuer</h3></div><p>An interim report from a foreign private issuer. Press releases and shareholder communications often arrive as 6-Ks.</p></div><div class="gloss" id="f-4"><div class="gloss-head"><span class="chip">4</span><h3>Insider transaction report</h3> <span class="freebadge">covered</span></div><p>A statement of changes in beneficial ownership. Directors, officers and 10% owners must report their trades within two business days.</p></div></article>
+<article class="issue prose"><header class="issue-head"><p class="kicker">Reference</p><h1>Filing types, in plain terms</h1><p class="issue-sub">The forms this digest watches, and what each one means. Definitions follow SEC usage; read the <a href="https://www.sec.gov/submit-filings/forms-index" rel="noopener">SEC forms index</a> for the full detail.</p></header><div class="gloss reveal" id="f-10-K"><div class="gloss-head"><span class="chip">10-K</span><h3>Annual report</h3></div><p>The annual report for U.S. filers. Audited financial statements, a description of the business, and risk factors.</p></div><div class="gloss reveal" id="f-10-Q"><div class="gloss-head"><span class="chip">10-Q</span><h3>Quarterly report</h3></div><p>The quarterly report for U.S. filers. Unaudited financial statements for the quarter.</p></div><div class="gloss reveal" id="f-8-K"><div class="gloss-head"><span class="chip">8-K</span><h3>Current report</h3> <span class="freebadge">covered</span></div><p>Discloses material events between periodic reports. Companies must file within four business days of the event.</p></div><div class="gloss reveal" id="f-20-F"><div class="gloss-head"><span class="chip">20-F</span><h3>Annual report, foreign issuer</h3></div><p>The annual report for foreign private issuers listed on U.S. exchanges. Many shipping companies file this instead of a 10-K.</p></div><div class="gloss reveal" id="f-40-F"><div class="gloss-head"><span class="chip">40-F</span><h3>Annual report, Canadian issuer</h3></div><p>The annual report for certain Canadian issuers under the U.S.–Canada multijurisdictional system.</p></div><div class="gloss reveal" id="f-6-K"><div class="gloss-head"><span class="chip">6-K</span><h3>Interim report, foreign issuer</h3></div><p>An interim report from a foreign private issuer. Press releases and shareholder communications often arrive as 6-Ks.</p></div><div class="gloss reveal" id="f-4"><div class="gloss-head"><span class="chip">4</span><h3>Insider transaction report</h3> <span class="freebadge">covered</span></div><p>A statement of changes in beneficial ownership. Directors, officers and 10% owners must report their trades within two business days.</p></div></article>
 </main>
 <footer class="footer">
   
@@ -41,10 +50,20 @@
   <nav class="footnav"><a href="index.html">Front page</a><a href="companies.html">Companies</a><a href="filings.html">Filing types</a><a href="methodology.html">Methodology</a><a href="about.html">About</a><a href="feed.xml">RSS</a></nav>
   <p class="colophon">A program compares every quote against the underlying
   SEC filing, character for character, before publication. Flagged material
-  never appears here. Your watchlist stars are stored in your browser only.
-  SEC filing text is public-domain material from sec.gov. This site is not
-  affiliated with the U.S. Securities and Exchange Commission.</p>
+  never appears here. Your watchlist stars and theme choice are stored in
+  your browser only. SEC filing text is public-domain material from sec.gov.
+  This site is not affiliated with the U.S. Securities and Exchange Commission.</p>
 </footer>
-<script src="site.js"></script>
+<div class="palette" id="palette" hidden>
+  <div class="palette-back" data-palette-close></div>
+  <div class="palette-panel" role="dialog" aria-label="Search companies">
+    <input id="palette-input" type="text" placeholder="Search 500+ companies&hellip;"
+      autocomplete="off" spellcheck="false">
+    <ul id="palette-list"></ul>
+    <p class="palette-hint">&uarr;&darr; to navigate &middot; Enter to open &middot; Esc to close</p>
+  </div>
+</div>
+<script src="companies-data.js" defer></script>
+<script src="site.js" defer></script>
 </body>
 </html>

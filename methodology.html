@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Filings Digest — Methodology</title>
+<meta name="description" content="How the digest drafts and mechanically verifies each note.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="masthead">
+  <a class="brand" href="index.html">The Filings Digest</a>
+  <nav class="nav"><a href="index.html">Issues</a><a href="companies.html">Companies</a><a href="filings.html">Filing types</a><a href="methodology.html">Methodology</a><a href="about.html">About</a></nav>
+</header>
+<main>
+
+<article class="issue prose">
+  <header class="issue-head"><p class="kicker">Methodology</p>
+  <h1>How a filing becomes a note</h1>
+  <p class="issue-sub">Four steps, two of them mechanical. The verification
+  step is ordinary string comparison, so you can reason about exactly what it
+  does and does not catch.</p></header>
+  <div class="steps"><div class="step"><span class="step-n">1</span><div><h3>Watch</h3><p>A script polls SEC EDGAR each weekday for new filings from the watchlist, using the SEC&#x27;s public submissions API. It costs nothing and touches no private data.</p></div></div><div class="step"><span class="step-n">2</span><div><h3>Draft</h3><p>Claude, an AI model, drafts a short note for each new filing under one hard rule: every factual bullet must carry an exact quote from the filing text.</p></div></div><div class="step"><span class="step-n">3</span><div><h3>Verify</h3><p>A separate program, not an AI, checks each quote against the filing character for character, and checks that every number in a bullet appears inside its own supporting quote.</p></div></div><div class="step"><span class="step-n">4</span><div><h3>Publish</h3><p>Notes that pass every check publish here. Notes that fail any check go to a private review file and never publish.</p></div></div></div>
+  <h2>What verification catches</h2>
+  <p>Fabricated quotes. Altered quotes. Numbers that appear in a claim without
+  appearing in the quote that supports it. These are the common failure modes
+  of AI-drafted text, and string comparison catches them reliably.</p>
+  <h2>What verification cannot catch</h2>
+  <p>A quote can be accurate and still mislead out of context. A note can
+  omit the most important fact in a filing. Long filings are truncated before
+  drafting, so a note may reflect only the first part of a document. This is
+  why every note links to its filing, and why you should read the source
+  before acting on anything here.</p>
+  <h2>Corrections</h2>
+  <p>The pipeline republishes from source data on every run. If you find an
+  error, check the linked filing first, then report it through the repository
+  that hosts this site.</p>
+</article>
+</main>
+<footer class="footer">
+  
+<div class="disclaimer" role="note">
+  <span class="disclaimer-label">What this is</span>
+  <p>An automated research digest. An AI model drafts each note from the text
+  of a public SEC filing. A separate program then checks every quote and
+  figure against that filing and withholds anything that fails the check.</p>
+  <p><strong>This is general information and commentary, not investment
+  advice</strong>, and not a recommendation to buy or sell any security. The
+  publisher is not a registered investment adviser or broker-dealer. A
+  verbatim quote can still mislead out of context, so read the primary
+  source: every note links to the official filing on sec.gov. No warranty of
+  accuracy or completeness.</p>
+</div>
+
+  <nav class="footnav"><a href="index.html">Issues</a><a href="companies.html">Companies</a><a href="filings.html">Filing types</a><a href="methodology.html">Methodology</a><a href="about.html">About</a></nav>
+  <p class="colophon">A program compares every quote against the underlying
+  SEC filing, character for character, before publication. Flagged material
+  never appears here. SEC filing text is public-domain material from sec.gov.
+  This site is not affiliated with the U.S. Securities and Exchange Commission.</p>
+</footer>
+</body>
+</html>
